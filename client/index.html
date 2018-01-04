@@ -1,14 +1,14 @@
 <!doctype html>
-<!--Bootstraping uma aplicação AngularJS, indica o elemento raiz-->
+<!--Bootstraping an application with AngularJS, points to root element-->
 <html ng-app="Instagram">
 <head>
 	<meta charset="utf-8">
-	<!--A meta tag http-equip renderiza o conteúdo(content) na versão do browser Microsoft Edge mais recente -->
+	<!--The meta tag http-equip renders content in the respective browser -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!--A meta tag name renderiza o conteúdo dos demais browsers, dimensão e escala-->
-	<meta name="viewport" content="width-device-width, initial-scale=1">
+	<!--A meta tag name renderso content in browser not specified, scale and dimension-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Instagram - Clone</title>
-	<!-- Link para um stylesheet externo-->
+	<!-- Link to a external stylesheet-->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
 	<link rel="stylesheet" href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
   	<link rel="stylesheet" href="css/styles.css">
@@ -33,6 +33,12 @@
 <script src="vendor/angular-route.js"></script>
 <script src="vendor/angular-messages.js"></script>
 <script src="app.js"></script>
+<!--adding some controllers to the index-->
+<script src="controllers/home.js"></script>
+<script src="controllers/detail.js"></script>
+<script src="controllers/login.js"></script>
+<script src="controllers/navbar.js"></script>
+<script src="controllers/signup.js"></script>
 
 </body>
 </html>
