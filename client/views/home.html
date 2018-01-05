@@ -1,0 +1,44 @@
+<!--Its necessary to check 3 main cases:
+	(1) User is authenticated with an email or OAuth AND has a valid instagram name;
+	(2) User is not authenticated;
+	(3) User is authenticated with an email or OAuth, but does not have a valid instagram name;
+-->
+
+<div class="container">
+	<!-- Angular directives
+		ng-if: renders a HTML block based on expression.If False removes from DOM, otherwise clones it
+		ng-repeat: instantiates a template once per item from a collection
+		ng-src: solve the {{hash}} markup problem in URLs
+	-->
+	<div ng-if="isAuthenticated() && currentUser.username">
+		<div class="row">
+			<div ng-repeat="photo in photos" class="col-lg-2 col-sm-3 col-xs-4">
+				<a href="#/photo/{{photo.id}}">
+					<img ng-src="{{photo.images.standard_resolution.url}}" class="thumbnail img-responsive">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="!isAuthenticated()">
+	    <div class="jumbotron">
+	      <h2><i class="ion-images"></i> Instagram</h2>
+	      <p>Clone do <strong>Instagram</strong>. Para continuar entre em sua conta ou crie uma nova.</p>
+	      <p>
+	        <a class="btn btn-lg btn-success" href="#/login"><i class="ion-log-in"></i> Entrar</a>
+	        <a class="btn btn-lg btn-primary" href="#/signup"><i class="ion-person-add"></i> Criar conta</a>
+	      </p>
+	    </div>
+	</div>
+
+	<div ng-if="isAuthenticated() && !currentUser.username" class="center-form panel">
+	    <div class="panel-body">
+	      <h5 class="text-center"><i class="ion-link"></i> Link Account</h5>
+	      <p>Para completar o cadastro você deve conectar ao Instagram.</p>
+	      <button class="btn btn-block btn-instagram" ng-click="linkInstagram()">
+	        <i class="ion-social-instagram"></i> Sign in with Instagram
+	      </button>
+	    </div>
+	</div>
+
+</div>
