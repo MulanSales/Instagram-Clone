@@ -20,7 +20,7 @@ angular.module('Instagram', ['ngRoute', 'ngMessages', 'satellizer'])
 				controller: 'LoginCtrl'
 			})
 			.when('/signup', {
-				templateUrl: 'views/signuṕ.html',
+				templateUrl: 'views/signup.html',
 				controller: 'SignupCtrl'
 			})
 			//id tells it is a unique reference to a photo id
